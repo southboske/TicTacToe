@@ -33,10 +33,15 @@
 }
 
 - (IBAction)onButtonTapped:(UIButton *)sender {
+    sender.titleLabel.text = self.oString;
+    
+    
     if ([self.whichPlayerLabel.text isEqualToString:@"X"]) {
         self.whichPlayerLabel.text = [NSString stringWithFormat:self.oString];
+        self.whichPlayerLabel.textColor = [UIColor blueColor];
     } else {
         self.whichPlayerLabel.text = [NSString stringWithFormat:self.xString];
+        self.whichPlayerLabel.textColor = [UIColor redColor];
     }
 }
 

@@ -17,6 +17,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *spaceSeven;
 @property (weak, nonatomic) IBOutlet UIButton *spaceEigth;
 @property (weak, nonatomic) IBOutlet UIButton *spaceNine;
+@property (weak, nonatomic) IBOutlet UILabel *whichPlayerLabel;
+@property NSString *xString;
+@property NSString *oString;
 
 @end
 
@@ -25,8 +28,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    self.xString = [NSString stringWithFormat:@"X"];
+    self.oString = [NSString stringWithFormat:@"O"];
 }
 
+- (IBAction)onButtonTapped:(UIButton *)sender {
+    if ([self.whichPlayerLabel.text isEqualToString:@"X"]) {
+        self.whichPlayerLabel.text = [NSString stringWithFormat:self.oString];
+    } else {
+        self.whichPlayerLabel.text = [NSString stringWithFormat:self.xString];
+    }
+}
 
 
 

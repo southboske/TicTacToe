@@ -30,15 +30,16 @@
     // Do any additional setup after loading the view, typically from a nib.
     self.xString = [NSString stringWithFormat:@"X"];
     self.oString = [NSString stringWithFormat:@"O"];
+    self.whichPlayerLabel.text = self.xString;
+    self.whichPlayerLabel.textColor = [UIColor redColor];
     
     
 }
 
 - (IBAction)onButtonTapped:(UIButton *)sender {
     [sender setTitle:self.whichPlayerLabel.text forState:UIControlStateNormal];
-    [sender setTitleColor:[UIColor redColor] forState:normal];
-    //sender.titleLabel.text = self.oString;
-    
+    [sender setTitleColor:self.whichPlayerLabel.textColor forState:normal];
+    [sender setEnabled:NO];
     
     if ([self.whichPlayerLabel.text isEqualToString:@"X"]) {
         self.whichPlayerLabel.text = [NSString stringWithFormat:self.oString];

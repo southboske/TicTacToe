@@ -49,10 +49,14 @@
         self.whichPlayerLabel.textColor = [UIColor redColor];
     }
     
+    for (<#initialization#>; <#condition#>; <#increment#>) {
+        <#statements#>
+    }
     
-    
- 
-    
+    if (spaceOne & space2 &space3 == X) {
+        return @"You Win";
+        
+    }
     
 }
 

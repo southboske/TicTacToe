@@ -156,12 +156,6 @@
                                 <color key="highlightedColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="shadowColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zht-iF-vrq">
-                                <rect key="frame" x="73" y="367" width="103" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -179,11 +173,10 @@
                         <outlet property="spaceNine" destination="54F-3z-lwg" id="fBO-cH-VEO"/>
                         <outlet property="spaceOne" destination="imj-df-hPc" id="aZ3-x7-Vqb"/>
                         <outlet property="spaceSeven" destination="6VG-0r-T77" id="E7V-Gm-mTV"/>
-                        <outlet property="spaceSix" destination="Bpn-Oo-EaD" id="Jzp-qc-ig3"/>
+                        <outlet property="spaceSix" destination="2bw-eL-Qvx" id="eg4-CW-K8C"/>
                         <outlet property="spaceThree" destination="Dtf-1N-Zez" id="1Qh-0C-8pV"/>
                         <outlet property="spaceTwo" destination="YbO-h9-8hf" id="x7U-Um-IIY"/>
                         <outlet property="whichPlayerLabel" destination="7Oy-Z3-u5L" id="FeB-An-osc"/>
-                        <outlet property="winner" destination="Zht-iF-vrq" id="lJv-6o-Acu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

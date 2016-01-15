@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *spaceTwo;
 @property (weak, nonatomic) IBOutlet UIButton *spaceThree;
 @property (weak, nonatomic) IBOutlet UIButton *spaceFour;
+@property (weak, nonatomic) IBOutlet UIButton *spaceFive;
 @property (weak, nonatomic) IBOutlet UIButton *spaceSix;
 @property (weak, nonatomic) IBOutlet UIButton *spaceSeven;
 @property (weak, nonatomic) IBOutlet UIButton *spaceEigth;
@@ -20,7 +21,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *whichPlayerLabel;
 @property NSString *xString;
 @property NSString *oString;
-@property (weak, nonatomic) IBOutlet UIButton *spaceFive;
 @property NSInteger s1;
 @property NSInteger s2;
 @property NSInteger s3;
@@ -144,13 +144,23 @@
 
     if (self.s1 == self.s2 && self.s2 == self.s3)
     {
-        if (self.s4 == 1)
+        if ([self.spaceOne.titleLabel.text isEqualToString:@"X"])
         {
             self.winner = self.xString;
             self.winnerAlert = [UIAlertController alertControllerWithTitle:@"You Win!" message:[NSString stringWithFormat:@"%@ is the winner!!!", self.winner] preferredStyle:UIAlertControllerStyleAlert];
             self.cancel = [UIAlertAction actionWithTitle:@"OK, thanks!" style:UIAlertActionStyleCancel handler:nil];
             [self presentViewController:self.winnerAlert animated:true completion:nil];
             [self.winnerAlert addAction:self.cancel];
+            self.spaceOne.userInteractionEnabled = false;
+            self.spaceTwo.userInteractionEnabled = false;
+            self.spaceThree.userInteractionEnabled = false;
+            self.spaceFour.userInteractionEnabled = false;
+            self.spaceFive.userInteractionEnabled = false;
+            self.spaceSix.userInteractionEnabled = false;
+            self.spaceSeven.userInteractionEnabled = false;
+            self.spaceEigth.userInteractionEnabled = false;
+            self.spaceNine.userInteractionEnabled = false;
+            
         }
         if ([self.spaceOne.titleLabel.text isEqualToString:@"O"])
         {
@@ -159,26 +169,53 @@
             self.cancel = [UIAlertAction actionWithTitle:@"OK, thanks!" style:UIAlertActionStyleCancel handler:nil];
             [self presentViewController:self.winnerAlert animated:true completion:nil];
             [self.winnerAlert addAction:self.cancel];
+            self.spaceOne.userInteractionEnabled = false;
+            self.spaceTwo.userInteractionEnabled = false;
+            self.spaceThree.userInteractionEnabled = false;
+            self.spaceFour.userInteractionEnabled = false;
+            self.spaceFive.userInteractionEnabled = false;
+            self.spaceSix.userInteractionEnabled = false;
+            self.spaceSeven.userInteractionEnabled = false;
+            self.spaceEigth.userInteractionEnabled = false;
+            self.spaceNine.userInteractionEnabled = false;
         }
         
     }
     if (self.s4 == self.s5 && self.s5 == self.s6)
     {
-        if (self.s4 == 1)
+        if ([self.spaceFour.titleLabel.text isEqualToString:@"X"])
         {
             self.winner = self.xString;
             self.winnerAlert = [UIAlertController alertControllerWithTitle:@"You Win!" message:[NSString stringWithFormat:@"%@ is the winner!!!", self.winner] preferredStyle:UIAlertControllerStyleAlert];
             self.cancel = [UIAlertAction actionWithTitle:@"OK, thanks!" style:UIAlertActionStyleCancel handler:nil];
             [self presentViewController:self.winnerAlert animated:true completion:nil];
             [self.winnerAlert addAction:self.cancel];
+            self.spaceOne.userInteractionEnabled = false;
+            self.spaceTwo.userInteractionEnabled = false;
+            self.spaceThree.userInteractionEnabled = false;
+            self.spaceFour.userInteractionEnabled = false;
+            self.spaceFive.userInteractionEnabled = false;
+            self.spaceSix.userInteractionEnabled = false;
+            self.spaceSeven.userInteractionEnabled = false;
+            self.spaceEigth.userInteractionEnabled = false;
+            self.spaceNine.userInteractionEnabled = false;
         }
-        if (self.s4 == 2)
+        if ([self.spaceFour.titleLabel.text isEqualToString:@"O"])
         {
             self.winner = self.oString;
             self.winnerAlert = [UIAlertController alertControllerWithTitle:@"You Win!" message:[NSString stringWithFormat:@"%@ is the winner!!!", self.winner] preferredStyle:UIAlertControllerStyleAlert];
             self.cancel = [UIAlertAction actionWithTitle:@"OK, thanks!" style:UIAlertActionStyleCancel handler:nil];
             [self presentViewController:self.winnerAlert animated:true completion:nil];
             [self.winnerAlert addAction:self.cancel];
+            self.spaceOne.userInteractionEnabled = false;
+            self.spaceTwo.userInteractionEnabled = false;
+            self.spaceThree.userInteractionEnabled = false;
+            self.spaceFour.userInteractionEnabled = false;
+            self.spaceFive.userInteractionEnabled = false;
+            self.spaceSix.userInteractionEnabled = false;
+            self.spaceSeven.userInteractionEnabled = false;
+            self.spaceEigth.userInteractionEnabled = false;
+            self.spaceNine.userInteractionEnabled = false;
         }
     }
     if (self.s7 == self.s8 && self.s8 == self.s9)
@@ -190,6 +227,15 @@
             self.cancel = [UIAlertAction actionWithTitle:@"OK, thanks!" style:UIAlertActionStyleCancel handler:nil];
             [self presentViewController:self.winnerAlert animated:true completion:nil];
             [self.winnerAlert addAction:self.cancel];
+            self.spaceOne.userInteractionEnabled = false;
+            self.spaceTwo.userInteractionEnabled = false;
+            self.spaceThree.userInteractionEnabled = false;
+            self.spaceFour.userInteractionEnabled = false;
+            self.spaceFive.userInteractionEnabled = false;
+            self.spaceSix.userInteractionEnabled = false;
+            self.spaceSeven.userInteractionEnabled = false;
+            self.spaceEigth.userInteractionEnabled = false;
+            self.spaceNine.userInteractionEnabled = false;
         }
         if ([self.spaceSeven.titleLabel.text isEqualToString:@"O"])
         {
@@ -198,6 +244,15 @@
             self.cancel = [UIAlertAction actionWithTitle:@"OK, thanks!" style:UIAlertActionStyleCancel handler:nil];
             [self presentViewController:self.winnerAlert animated:true completion:nil];
             [self.winnerAlert addAction:self.cancel];
+            self.spaceOne.userInteractionEnabled = false;
+            self.spaceTwo.userInteractionEnabled = false;
+            self.spaceThree.userInteractionEnabled = false;
+            self.spaceFour.userInteractionEnabled = false;
+            self.spaceFive.userInteractionEnabled = false;
+            self.spaceSix.userInteractionEnabled = false;
+            self.spaceSeven.userInteractionEnabled = false;
+            self.spaceEigth.userInteractionEnabled = false;
+            self.spaceNine.userInteractionEnabled = false;
         }
     }
     if (self.s1 == self.s4 && self.s4 == self.s7)
@@ -209,6 +264,15 @@
             self.cancel = [UIAlertAction actionWithTitle:@"OK, thanks!" style:UIAlertActionStyleCancel handler:nil];
             [self presentViewController:self.winnerAlert animated:true completion:nil];
             [self.winnerAlert addAction:self.cancel];
+            self.spaceOne.userInteractionEnabled = false;
+            self.spaceTwo.userInteractionEnabled = false;
+            self.spaceThree.userInteractionEnabled = false;
+            self.spaceFour.userInteractionEnabled = false;
+            self.spaceFive.userInteractionEnabled = false;
+            self.spaceSix.userInteractionEnabled = false;
+            self.spaceSeven.userInteractionEnabled = false;
+            self.spaceEigth.userInteractionEnabled = false;
+            self.spaceNine.userInteractionEnabled = false;
         }
         if ([self.spaceOne.titleLabel.text isEqualToString:@"O"])
         {
@@ -217,6 +281,15 @@
             self.cancel = [UIAlertAction actionWithTitle:@"OK, thanks!" style:UIAlertActionStyleCancel handler:nil];
             [self presentViewController:self.winnerAlert animated:true completion:nil];
             [self.winnerAlert addAction:self.cancel];
+            self.spaceOne.userInteractionEnabled = false;
+            self.spaceTwo.userInteractionEnabled = false;
+            self.spaceThree.userInteractionEnabled = false;
+            self.spaceFour.userInteractionEnabled = false;
+            self.spaceFive.userInteractionEnabled = false;
+            self.spaceSix.userInteractionEnabled = false;
+            self.spaceSeven.userInteractionEnabled = false;
+            self.spaceEigth.userInteractionEnabled = false;
+            self.spaceNine.userInteractionEnabled = false;
         }
     }
     if (self.s2 == self.s5 && self.s5 == self.s8)
@@ -228,6 +301,15 @@
             self.cancel = [UIAlertAction actionWithTitle:@"OK, thanks!" style:UIAlertActionStyleCancel handler:nil];
             [self presentViewController:self.winnerAlert animated:true completion:nil];
             [self.winnerAlert addAction:self.cancel];
+            self.spaceOne.userInteractionEnabled = false;
+            self.spaceTwo.userInteractionEnabled = false;
+            self.spaceThree.userInteractionEnabled = false;
+            self.spaceFour.userInteractionEnabled = false;
+            self.spaceFive.userInteractionEnabled = false;
+            self.spaceSix.userInteractionEnabled = false;
+            self.spaceSeven.userInteractionEnabled = false;
+            self.spaceEigth.userInteractionEnabled = false;
+            self.spaceNine.userInteractionEnabled = false;
         }
         if ([self.spaceTwo.titleLabel.text isEqualToString:@"O"])
         {
@@ -236,6 +318,15 @@
             self.cancel = [UIAlertAction actionWithTitle:@"OK, thanks!" style:UIAlertActionStyleCancel handler:nil];
             [self presentViewController:self.winnerAlert animated:true completion:nil];
             [self.winnerAlert addAction:self.cancel];
+            self.spaceOne.userInteractionEnabled = false;
+            self.spaceTwo.userInteractionEnabled = false;
+            self.spaceThree.userInteractionEnabled = false;
+            self.spaceFour.userInteractionEnabled = false;
+            self.spaceFive.userInteractionEnabled = false;
+            self.spaceSix.userInteractionEnabled = false;
+            self.spaceSeven.userInteractionEnabled = false;
+            self.spaceEigth.userInteractionEnabled = false;
+            self.spaceNine.userInteractionEnabled = false;
         }
     }
     if (self.s3 == self.s6 && self.s6 == self.s9)
@@ -247,6 +338,15 @@
             self.cancel = [UIAlertAction actionWithTitle:@"OK, thanks!" style:UIAlertActionStyleCancel handler:nil];
             [self presentViewController:self.winnerAlert animated:true completion:nil];
             [self.winnerAlert addAction:self.cancel];
+            self.spaceOne.userInteractionEnabled = false;
+            self.spaceTwo.userInteractionEnabled = false;
+            self.spaceThree.userInteractionEnabled = false;
+            self.spaceFour.userInteractionEnabled = false;
+            self.spaceFive.userInteractionEnabled = false;
+            self.spaceSix.userInteractionEnabled = false;
+            self.spaceSeven.userInteractionEnabled = false;
+            self.spaceEigth.userInteractionEnabled = false;
+            self.spaceNine.userInteractionEnabled = false;
         }
         if ([self.spaceThree.titleLabel.text isEqualToString:@"O"])
         {
@@ -255,6 +355,15 @@
             self.cancel = [UIAlertAction actionWithTitle:@"OK, thanks!" style:UIAlertActionStyleCancel handler:nil];
             [self presentViewController:self.winnerAlert animated:true completion:nil];
             [self.winnerAlert addAction:self.cancel];
+            self.spaceOne.userInteractionEnabled = false;
+            self.spaceTwo.userInteractionEnabled = false;
+            self.spaceThree.userInteractionEnabled = false;
+            self.spaceFour.userInteractionEnabled = false;
+            self.spaceFive.userInteractionEnabled = false;
+            self.spaceSix.userInteractionEnabled = false;
+            self.spaceSeven.userInteractionEnabled = false;
+            self.spaceEigth.userInteractionEnabled = false;
+            self.spaceNine.userInteractionEnabled = false;
         }
     }
     if (self.s1 == self.s5 && self.s5 == self.s9)
@@ -266,6 +375,15 @@
             self.cancel = [UIAlertAction actionWithTitle:@"OK, thanks!" style:UIAlertActionStyleCancel handler:nil];
             [self presentViewController:self.winnerAlert animated:true completion:nil];
             [self.winnerAlert addAction:self.cancel];
+            self.spaceOne.userInteractionEnabled = false;
+            self.spaceTwo.userInteractionEnabled = false;
+            self.spaceThree.userInteractionEnabled = false;
+            self.spaceFour.userInteractionEnabled = false;
+            self.spaceFive.userInteractionEnabled = false;
+            self.spaceSix.userInteractionEnabled = false;
+            self.spaceSeven.userInteractionEnabled = false;
+            self.spaceEigth.userInteractionEnabled = false;
+            self.spaceNine.userInteractionEnabled = false;
         }
         if ([self.spaceOne.titleLabel.text isEqualToString:@"O"])
         {
@@ -274,6 +392,15 @@
             self.cancel = [UIAlertAction actionWithTitle:@"OK, thanks!" style:UIAlertActionStyleCancel handler:nil];
             [self presentViewController:self.winnerAlert animated:true completion:nil];
             [self.winnerAlert addAction:self.cancel];
+            self.spaceOne.userInteractionEnabled = false;
+            self.spaceTwo.userInteractionEnabled = false;
+            self.spaceThree.userInteractionEnabled = false;
+            self.spaceFour.userInteractionEnabled = false;
+            self.spaceFive.userInteractionEnabled = false;
+            self.spaceSix.userInteractionEnabled = false;
+            self.spaceSeven.userInteractionEnabled = false;
+            self.spaceEigth.userInteractionEnabled = false;
+            self.spaceNine.userInteractionEnabled = false;
         }
     }
     if (self.s3 == self.s5 && self.s5 == self.s7)
@@ -285,6 +412,15 @@
             self.cancel = [UIAlertAction actionWithTitle:@"OK, thanks!" style:UIAlertActionStyleCancel handler:nil];
             [self presentViewController:self.winnerAlert animated:true completion:nil];
             [self.winnerAlert addAction:self.cancel];
+            self.spaceOne.userInteractionEnabled = false;
+            self.spaceTwo.userInteractionEnabled = false;
+            self.spaceThree.userInteractionEnabled = false;
+            self.spaceFour.userInteractionEnabled = false;
+            self.spaceFive.userInteractionEnabled = false;
+            self.spaceSix.userInteractionEnabled = false;
+            self.spaceSeven.userInteractionEnabled = false;
+            self.spaceEigth.userInteractionEnabled = false;
+            self.spaceNine.userInteractionEnabled = false;
         }
         if ([self.spaceThree.titleLabel.text isEqualToString:@"O"])
         {
@@ -293,6 +429,15 @@
             self.cancel = [UIAlertAction actionWithTitle:@"OK, thanks!" style:UIAlertActionStyleCancel handler:nil];
             [self presentViewController:self.winnerAlert animated:true completion:nil];
             [self.winnerAlert addAction:self.cancel];
+            self.spaceOne.userInteractionEnabled = false;
+            self.spaceTwo.userInteractionEnabled = false;
+            self.spaceThree.userInteractionEnabled = false;
+            self.spaceFour.userInteractionEnabled = false;
+            self.spaceFive.userInteractionEnabled = false;
+            self.spaceSix.userInteractionEnabled = false;
+            self.spaceSeven.userInteractionEnabled = false;
+            self.spaceEigth.userInteractionEnabled = false;
+            self.spaceNine.userInteractionEnabled = false;
         }
     }
 }

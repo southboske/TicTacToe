@@ -30,7 +30,9 @@
 @property NSInteger s7;
 @property NSInteger s8;
 @property NSInteger s9;
-@property (weak, nonatomic) IBOutlet UILabel *winner;
+@property NSString *winner;
+@property UIAlertController *winnerAlert;
+@property UIAlertAction *cancel;
 
 @end
 
@@ -43,19 +45,8 @@
     self.oString = [NSString stringWithFormat:@"O"];
     self.whichPlayerLabel.text = self.xString;
     self.whichPlayerLabel.textColor = [UIColor redColor];
-    
-    
 }
 
-- (void)testMethod {
-    int V1 = 0;
-    
-    {
-        int V1 = 1;
-    }
-    
-    NSLog(@"%d", V1);
-}
 
 - (IBAction)onButtonTapped:(UIButton *)sender {
     [sender setTitle:self.whichPlayerLabel.text forState:UIControlStateNormal];
@@ -73,137 +64,235 @@
     if ([self.spaceOne.titleLabel.text isEqualToString:@"X"])
     {
         self.s1 = 1;
-    } else {
+    }
+    if ([self.spaceOne.titleLabel.text isEqualToString:@"O"])
+    {
         self.s1 = 2;
     }
     
     if ([self.spaceTwo.titleLabel.text isEqualToString:@"X"])
     {
         self.s2 = 1;
-    } else {
+    }
+    if ([self.spaceTwo.titleLabel.text isEqualToString:@"O"])
+    {
         self.s2 = 2;
     }
 
     if ([self.spaceThree.titleLabel.text isEqualToString:@"X"])
     {
         self.s3 = 1;
-    } else {
+    }
+    if ([self.spaceThree.titleLabel.text isEqualToString:@"O"])
+    {
         self.s3 = 2;
     }
 
     if ([self.spaceFour.titleLabel.text isEqualToString:@"X"])
     {
         self.s4 = 1;
-    } else {
+    }
+    if ([self.spaceFour.titleLabel.text isEqualToString:@"O"])
+    {
         self.s4 = 2;
     }
     
     if ([self.spaceFive.titleLabel.text isEqualToString:@"X"])
     {
         self.s5 = 1;
-    } else {
+    }
+    if ([self.spaceFive.titleLabel.text isEqualToString:@"O"])
+    {
         self.s5 = 2;
     }
 
     if ([self.spaceSix.titleLabel.text isEqualToString:@"X"])
     {
         self.s6 = 1;
-    } else {
+    }
+    if ([self.spaceSix.titleLabel.text isEqualToString:@"O"])
+    {
         self.s6 = 2;
     }
 
     if ([self.spaceSeven.titleLabel.text isEqualToString:@"X"])
     {
         self.s7 = 1;
-    } else {
+    }
+    if ([self.spaceSeven.titleLabel.text isEqualToString:@"O"])
+    {
         self.s7 = 2;
     }
 
     if ([self.spaceEigth.titleLabel.text isEqualToString:@"X"])
     {
         self.s8 = 1;
-    } else {
+    }
+    if ([self.spaceEigth.titleLabel.text isEqualToString:@"O"])
+    {
         self.s8 = 2;
     }
 
     if ([self.spaceNine.titleLabel.text isEqualToString:@"X"])
     {
         self.s9 = 1;
-    } else {
+    }
+    if ([self.spaceNine.titleLabel.text isEqualToString:@"O"])
+    {
         self.s9 = 2;
     }
 
     if (self.s1 == self.s2 && self.s2 == self.s3)
     {
-        if ([self.spaceOne.titleLabel.text isEqualToString:@"X"])
+        if (self.s4 == 1)
         {
-            self.winner.text = [NSString stringWithFormat:@"X Wins!"];
-        } else {
-            self.winner.text = [NSString stringWithFormat:@"O Wins!"];
+            self.winner = self.xString;
+            self.winnerAlert = [UIAlertController alertControllerWithTitle:@"You Win!" message:[NSString stringWithFormat:@"%@ is the winner!!!", self.winner] preferredStyle:UIAlertControllerStyleAlert];
+            self.cancel = [UIAlertAction actionWithTitle:@"OK, thanks!" style:UIAlertActionStyleCancel handler:nil];
+            [self presentViewController:self.winnerAlert animated:true completion:nil];
+            [self.winnerAlert addAction:self.cancel];
+        }
+        if ([self.spaceOne.titleLabel.text isEqualToString:@"O"])
+        {
+            self.winner = self.oString;
+            self.winnerAlert = [UIAlertController alertControllerWithTitle:@"You Win!" message:[NSString stringWithFormat:@"%@ is the winner!!!", self.winner] preferredStyle:UIAlertControllerStyleAlert];
+            self.cancel = [UIAlertAction actionWithTitle:@"OK, thanks!" style:UIAlertActionStyleCancel handler:nil];
+            [self presentViewController:self.winnerAlert animated:true completion:nil];
+            [self.winnerAlert addAction:self.cancel];
         }
         
     }
     if (self.s4 == self.s5 && self.s5 == self.s6)
     {
-        if ([self.spaceFour.titleLabel.text isEqualToString:@"X"])
+        if (self.s4 == 1)
         {
-            self.winner.text = [NSString stringWithFormat:@"X Wins!"];
-        } else {
-            self.winner.text = [NSString stringWithFormat:@"O Wins!"];
+            self.winner = self.xString;
+            self.winnerAlert = [UIAlertController alertControllerWithTitle:@"You Win!" message:[NSString stringWithFormat:@"%@ is the winner!!!", self.winner] preferredStyle:UIAlertControllerStyleAlert];
+            self.cancel = [UIAlertAction actionWithTitle:@"OK, thanks!" style:UIAlertActionStyleCancel handler:nil];
+            [self presentViewController:self.winnerAlert animated:true completion:nil];
+            [self.winnerAlert addAction:self.cancel];
+        }
+        if (self.s4 == 2)
+        {
+            self.winner = self.oString;
+            self.winnerAlert = [UIAlertController alertControllerWithTitle:@"You Win!" message:[NSString stringWithFormat:@"%@ is the winner!!!", self.winner] preferredStyle:UIAlertControllerStyleAlert];
+            self.cancel = [UIAlertAction actionWithTitle:@"OK, thanks!" style:UIAlertActionStyleCancel handler:nil];
+            [self presentViewController:self.winnerAlert animated:true completion:nil];
+            [self.winnerAlert addAction:self.cancel];
         }
     }
     if (self.s7 == self.s8 && self.s8 == self.s9)
     {
         if ([self.spaceSeven.titleLabel.text isEqualToString:@"X"])
         {
-            self.winner.text = [NSString stringWithFormat:@"X Wins!"];
-        } else {
-            self.winner.text = [NSString stringWithFormat:@"O Wins!"];
+            self.winner = self.xString;
+            self.winnerAlert = [UIAlertController alertControllerWithTitle:@"You Win!" message:[NSString stringWithFormat:@"%@ is the winner!!!", self.winner] preferredStyle:UIAlertControllerStyleAlert];
+            self.cancel = [UIAlertAction actionWithTitle:@"OK, thanks!" style:UIAlertActionStyleCancel handler:nil];
+            [self presentViewController:self.winnerAlert animated:true completion:nil];
+            [self.winnerAlert addAction:self.cancel];
+        }
+        if ([self.spaceSeven.titleLabel.text isEqualToString:@"O"])
+        {
+            self.winner = self.oString;
+            self.winnerAlert = [UIAlertController alertControllerWithTitle:@"You Win!" message:[NSString stringWithFormat:@"%@ is the winner!!!", self.winner] preferredStyle:UIAlertControllerStyleAlert];
+            self.cancel = [UIAlertAction actionWithTitle:@"OK, thanks!" style:UIAlertActionStyleCancel handler:nil];
+            [self presentViewController:self.winnerAlert animated:true completion:nil];
+            [self.winnerAlert addAction:self.cancel];
         }
     }
     if (self.s1 == self.s4 && self.s4 == self.s7)
     {
         if ([self.spaceOne.titleLabel.text isEqualToString:@"X"])
         {
-            self.winner.text = [NSString stringWithFormat:@"X Wins!"];
-        } else {
-            self.winner.text = [NSString stringWithFormat:@"O Wins!"];
+            self.winner = self.xString;
+            self.winnerAlert = [UIAlertController alertControllerWithTitle:@"You Win!" message:[NSString stringWithFormat:@"%@ is the winner!!!", self.winner] preferredStyle:UIAlertControllerStyleAlert];
+            self.cancel = [UIAlertAction actionWithTitle:@"OK, thanks!" style:UIAlertActionStyleCancel handler:nil];
+            [self presentViewController:self.winnerAlert animated:true completion:nil];
+            [self.winnerAlert addAction:self.cancel];
+        }
+        if ([self.spaceOne.titleLabel.text isEqualToString:@"O"])
+        {
+            self.winner = self.oString;
+            self.winnerAlert = [UIAlertController alertControllerWithTitle:@"You Win!" message:[NSString stringWithFormat:@"%@ is the winner!!!", self.winner] preferredStyle:UIAlertControllerStyleAlert];
+            self.cancel = [UIAlertAction actionWithTitle:@"OK, thanks!" style:UIAlertActionStyleCancel handler:nil];
+            [self presentViewController:self.winnerAlert animated:true completion:nil];
+            [self.winnerAlert addAction:self.cancel];
         }
     }
     if (self.s2 == self.s5 && self.s5 == self.s8)
     {
         if ([self.spaceTwo.titleLabel.text isEqualToString:@"X"])
         {
-            self.winner.text = [NSString stringWithFormat:@"X Wins!"];
-        } else {
-            self.winner.text = [NSString stringWithFormat:@"O Wins!"];
+            self.winner = self.xString;
+            self.winnerAlert = [UIAlertController alertControllerWithTitle:@"You Win!" message:[NSString stringWithFormat:@"%@ is the winner!!!", self.winner] preferredStyle:UIAlertControllerStyleAlert];
+            self.cancel = [UIAlertAction actionWithTitle:@"OK, thanks!" style:UIAlertActionStyleCancel handler:nil];
+            [self presentViewController:self.winnerAlert animated:true completion:nil];
+            [self.winnerAlert addAction:self.cancel];
+        }
+        if ([self.spaceTwo.titleLabel.text isEqualToString:@"O"])
+        {
+            self.winner = self.oString;
+            self.winnerAlert = [UIAlertController alertControllerWithTitle:@"You Win!" message:[NSString stringWithFormat:@"%@ is the winner!!!", self.winner] preferredStyle:UIAlertControllerStyleAlert];
+            self.cancel = [UIAlertAction actionWithTitle:@"OK, thanks!" style:UIAlertActionStyleCancel handler:nil];
+            [self presentViewController:self.winnerAlert animated:true completion:nil];
+            [self.winnerAlert addAction:self.cancel];
         }
     }
     if (self.s3 == self.s6 && self.s6 == self.s9)
     {
         if ([self.spaceThree.titleLabel.text isEqualToString:@"X"])
         {
-            self.winner.text = [NSString stringWithFormat:@"X Wins!"];
-        } else {
-            self.winner.text = [NSString stringWithFormat:@"O Wins!"];
+            self.winner = self.xString;
+            self.winnerAlert = [UIAlertController alertControllerWithTitle:@"You Win!" message:[NSString stringWithFormat:@"%@ is the winner!!!", self.winner] preferredStyle:UIAlertControllerStyleAlert];
+            self.cancel = [UIAlertAction actionWithTitle:@"OK, thanks!" style:UIAlertActionStyleCancel handler:nil];
+            [self presentViewController:self.winnerAlert animated:true completion:nil];
+            [self.winnerAlert addAction:self.cancel];
+        }
+        if ([self.spaceThree.titleLabel.text isEqualToString:@"O"])
+        {
+            self.winner = self.oString;
+            self.winnerAlert = [UIAlertController alertControllerWithTitle:@"You Win!" message:[NSString stringWithFormat:@"%@ is the winner!!!", self.winner] preferredStyle:UIAlertControllerStyleAlert];
+            self.cancel = [UIAlertAction actionWithTitle:@"OK, thanks!" style:UIAlertActionStyleCancel handler:nil];
+            [self presentViewController:self.winnerAlert animated:true completion:nil];
+            [self.winnerAlert addAction:self.cancel];
         }
     }
     if (self.s1 == self.s5 && self.s5 == self.s9)
     {
         if ([self.spaceOne.titleLabel.text isEqualToString:@"X"])
         {
-            self.winner.text = [NSString stringWithFormat:@"X Wins!"];
-        } else {
-            self.winner.text = [NSString stringWithFormat:@"O Wins!"];
+            self.winner = self.xString;
+            self.winnerAlert = [UIAlertController alertControllerWithTitle:@"You Win!" message:[NSString stringWithFormat:@"%@ is the winner!!!", self.winner] preferredStyle:UIAlertControllerStyleAlert];
+            self.cancel = [UIAlertAction actionWithTitle:@"OK, thanks!" style:UIAlertActionStyleCancel handler:nil];
+            [self presentViewController:self.winnerAlert animated:true completion:nil];
+            [self.winnerAlert addAction:self.cancel];
+        }
+        if ([self.spaceOne.titleLabel.text isEqualToString:@"O"])
+        {
+            self.winner = self.oString;
+            self.winnerAlert = [UIAlertController alertControllerWithTitle:@"You Win!" message:[NSString stringWithFormat:@"%@ is the winner!!!", self.winner] preferredStyle:UIAlertControllerStyleAlert];
+            self.cancel = [UIAlertAction actionWithTitle:@"OK, thanks!" style:UIAlertActionStyleCancel handler:nil];
+            [self presentViewController:self.winnerAlert animated:true completion:nil];
+            [self.winnerAlert addAction:self.cancel];
         }
     }
     if (self.s3 == self.s5 && self.s5 == self.s7)
     {
         if ([self.spaceThree.titleLabel.text isEqualToString:@"X"])
         {
-            self.winner.text = [NSString stringWithFormat:@"X Wins!"];
-        } else {
-            self.winner.text = [NSString stringWithFormat:@"O Wins!"];
+            self.winner = self.xString;
+            self.winnerAlert = [UIAlertController alertControllerWithTitle:@"You Win!" message:[NSString stringWithFormat:@"%@ is the winner!!!", self.winner] preferredStyle:UIAlertControllerStyleAlert];
+            self.cancel = [UIAlertAction actionWithTitle:@"OK, thanks!" style:UIAlertActionStyleCancel handler:nil];
+            [self presentViewController:self.winnerAlert animated:true completion:nil];
+            [self.winnerAlert addAction:self.cancel];
+        }
+        if ([self.spaceThree.titleLabel.text isEqualToString:@"O"])
+        {
+            self.winner = self.oString;
+            self.winnerAlert = [UIAlertController alertControllerWithTitle:@"You Win!" message:[NSString stringWithFormat:@"%@ is the winner!!!", self.winner] preferredStyle:UIAlertControllerStyleAlert];
+            self.cancel = [UIAlertAction actionWithTitle:@"OK, thanks!" style:UIAlertActionStyleCancel handler:nil];
+            [self presentViewController:self.winnerAlert animated:true completion:nil];
+            [self.winnerAlert addAction:self.cancel];
         }
     }
 }
